@@ -1,0 +1,282 @@
+<div class="room"
+    style="background-image: url(https://media1.tenor.com/images/dbc9327947163406625e71f4af114f3b/tenor.gif?itemid=13113745); width: 100%; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center">
+    <h1 style="color: white; font-size: 50; padding-bottom: 50px">This is {{displayName}}'s playroom {{email}}</h1>
+    <div id="pianoDiv">
+        <svg class="piano" id="piano" height="230" width="1000">
+            <polygon points="200,10 230,10 230,100 245,100 245,220 200,220 200,10" class="white" id="c" data-key="65" />
+
+
+            <polygon points="245,100 260,100 260,10 275,10 275,100 290,100 290,220 245,220 245,100" class="white"
+                data-key="83" id="d" />
+
+
+            <polygon points="305,10 335,10 335,220 290,220 290,100 305,100 305,10" class="white" data-key="68" id="e" />
+
+
+            <polygon points="335,10 365,10 365,100 380,100 380,220 335,220 335,10" class="white" data-key="70" id="f" />
+
+
+            <polygon points="380,100 395,100 395,10 410,10 410,100 425,100 425,220 380,220 380,100" class="white"
+                data-key="71" id="g" />
+
+
+            <polygon points="425,100 440,100 440,10 455,10 455,100 470,100 470,220 425,220 425,100" class="white"
+                data-key="72" id="a" />
+
+            <polygon points="470,100 485,100 485,10 515,10 515,220 470,220 470,100" class="white" data-key="74"
+                id="b" />
+
+            <polygon points="515,10 545,10 545,100 560,100 560,220 515,220 515,10" class="white" data-key="82"
+                id="hc" />
+
+            <polygon points="560,100 575,100 575,10 590,10 590,100 605,100 605,220 560,220" class="white" data-key="84"
+                id="hd" />
+
+            <polygon points="605,100 620,100 620,10 650,10 650,220 605,220 605,100" class="white" data-key="89"
+                id="he" />
+
+            <polygon points="650,10 680,10 680,100 695,100 695,220 650,220 650,10" class="white" data-key="85"
+                id="hf" />
+
+            <polygon points="695,100 710,100 710,10 725,10 725,100 740,100 740,220 695,220 695,100" class="white"
+                data-key="73" id="hg" />
+
+            <polygon points="740,100 755,100 755,10 770,10 770,100 785,100 785,220 740,220 740,100" class="white"
+                data-key="79" id="ha" />
+
+            <polygon points="785,100 800,100 800,10 830,10 830,220 785,220 785,100" class="white" data-key="80"
+                id="hb" />
+
+            <polygon points="230,10 260,10 260,100 230,100 230,10" class="black" data-key="49" id="c_sharp" />
+            <polygon points="275,10 305,10 305,100 275,100 275,10" class="black" data-key="50" id="d_sharp" />
+            <polygon points="365,10 395,10 395,100 365,100 365,10" class="black" data-key="51" id="f_sharp" />
+            <polygon points="410,10 440,10 440,100 410,100 410,10" class="black" data-key="52" id="g_sharp" />
+            <polygon points="455,10 485,10 485,100 455,100 455,10" class="black" data-key="53" id="a_sharp" />
+            <polygon points="545,10 575,10 575,100 545,100 545,10" class="black" data-key="54" id="key4" />
+            <polygon points="590,10 620,10 620,100 590,100 590,10" class="black" data-key="55" id="key4" />
+            <polygon points="680,10 710,10 710,100 680,100 680,10" class="black" data-key="56" id="key4" />
+            <polygon points="725,10 755,10 755,100 725,100 725,10" class="black" data-key="57" id="key4" />
+            <polygon points="770,10 800,10 800,100 770,100 770,10" class="black" data-key="48" id="key4" />
+        </svg>
+    </div>
+
+
+
+    <a class="btn btn-primary" id="toUsers" href="/users">View Users</a>
+    <p></p>
+    <a class="btn btn-primary" href="/logout">Logout</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        let user = JSON.parse((`{{ user }}`.split('&quot;').join(`"`)));
+        console.log(user);
+
+        console.log("USER:", user);
+        let socket = io('localhost:3000');
+
+
+
+        socket.on('connect', function () {
+            console.log("rooms: ", socket.rooms)
+            socket.emit("joinRoom", user._id);
+        });
+
+        $("toUsers").on("click", function () {
+            socket.emit("leaveRoom", user._id);
+        })
+
+        $("body").keyup(function (e) {
+            switch (e.keyCode) {
+                case 81: //white
+
+                    $("#c").toggleClass("white");
+                    break;
+                case 50: //black
+                    path = "mid_c_sharp";
+                    break;
+                case 87: //white 
+                    path = "middle_d";
+                    $("#d").toggleClass("white");
+                    break;
+                case 51:
+                    path = "mid_d_sharp";
+                    break;
+                case 69:
+                    path = "middle_e";
+                    $("#e").toggleClass("white");
+                    break;
+                case 82:
+                    path = "middle_f";
+                    $("#f").toggleClass("white");
+                    break;
+                case 53:
+                    path = "mid_f_sharp";
+                    break;
+                case 84:
+                    path = "middle_g";
+                    $("#g").toggleClass("white");
+                    break;
+                case 54:
+                    path = "mid_g_sharp";
+                    break;
+                case 89:
+                    path = "middle_a";
+                    $("#a").toggleClass("white");
+                    break;
+                case 55:
+                    path = "mid_a_sharp";
+                    break;
+                case 85:
+                    path = "middle_b";
+                    $("#b").toggleClass("white");
+                    break;
+                case 90:
+                    path = "high_c";
+                    $("#hc").toggleClass("white");
+                    break;
+                case 83:
+                    path = "high_c_sharp";
+                    break;
+                case 88:
+                    path = "high_d";
+                    $("#hd").toggleClass("white");
+                    break;
+                case 68:
+                    path = "high_d_sharp";
+                    break;
+                case 67:
+                    path = "high_e";
+                    $("#he").toggleClass("white");
+                    break;
+                case 86:
+                    path = "high_f";
+                    $("#hf").toggleClass("white");
+                    break;
+                case 71:
+                    path = "high_f_sharp";
+                    break;
+                case 66:
+                    path = "high_g";
+                    $("#hg").toggleClass("white");
+                    break;
+                case 72:
+                    path = "high_g_sharp";
+                    break;
+                case 78:
+                    path = "high_a";
+                    $("#ha").toggleClass("white");
+                    break;
+                case 74:
+                    path = "high_a_sharp";
+                    break;
+                case 77:
+                    path = "high_b";
+                    $("#hb").toggleClass("white");
+                    break;
+            }
+        });
+
+        $("body").keydown(function (e) {
+            console.log('key pressed:', e.keyCode);
+            let path = ''
+            switch (e.keyCode) {
+                case 81: //white
+                    path = "middle_c";
+                    $("#c").toggleClass("white");
+                    break;
+                case 50: //black
+                    path = "mid_c_sharp";
+                    break;
+                case 87: //white 
+                    path = "middle_d";
+                    $("#d").toggleClass("white");
+                    break;
+                case 51:
+                    path = "mid_d_sharp";
+                    break;
+                case 69:
+                    path = "middle_e";
+                    $("#e").toggleClass("white");
+                    break;
+                case 82:
+                    path = "middle_f";
+                    $("#f").toggleClass("white");
+                    break;
+                case 53:
+                    path = "mid_f_sharp";
+                    break;
+                case 84:
+                    path = "middle_g";
+                    $("#g").toggleClass("white");
+                    break;
+                case 54:
+                    path = "mid_g_sharp";
+                    break;
+                case 89:
+                    path = "middle_a";
+                    $("#a").toggleClass("white");
+                    break;
+                case 55:
+                    path = "mid_a_sharp";
+                    break;
+                case 85:
+                    path = "middle_b";
+                    $("#b").toggleClass("white");
+                    break;
+                case 90:
+                    path = "high_c";
+                    $("#hc").toggleClass("white");
+                    break;
+                case 83:
+                    path = "high_c_sharp";
+                    break;
+                case 88:
+                    path = "high_d";
+                    $("#hd").toggleClass("white");
+                    break;
+                case 68:
+                    path = "high_d_sharp";
+                    break;
+                case 67:
+                    path = "high_e";
+                    $("#he").toggleClass("white");
+                    break;
+                case 86:
+                    path = "high_f";
+                    $("#hf").toggleClass("white");
+                    break;
+                case 71:
+                    path = "high_f_sharp";
+                    break;
+                case 66:
+                    path = "high_g";
+                    $("#hg").toggleClass("white");
+                    break;
+                case 72:
+                    path = "high_g_sharp";
+                    break;
+                case 78:
+                    path = "high_a";
+                    $("#ha").toggleClass("white");
+                    break;
+                case 74:
+                    path = "high_a_sharp";
+                    break;
+                case 77:
+                    path = "high_b";
+                    $("#hb").toggleClass("white");
+                    break;
+
+            }
+            socket.emit('keyPressed', { path, room: user._id });
+        })
+
+        socket.on("playNote", function (path) {
+
+            new Audio(`/assets/piano/${path}.mp3`).play();
+
+        })
+
+    </script>
+</div>

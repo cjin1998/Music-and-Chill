@@ -1,0 +1,46 @@
+<div class="name-container">
+  <img src={{user.imgUrl}}>
+  <h4>Name:</h4>
+  <p>{{user.displayName}}</p>
+</div>
+
+<div class="email-container">
+  <h4>Email:</h4>
+  <p>{{user.email}}</p>
+</div>
+
+<div class="bio-container">
+  <h4>Biography:</h4>
+  <p>{{user.bio}}</p>
+</div>
+
+<div class="tweets-container">
+  <h4>Tweets:</h4>
+  <p>{{user.tweets}}</p>
+</div>
+
+<div class="following-container">
+  <h4>Following:</h4>
+  {{#each followings}}
+  <div>{{this.follower.displayName}}</div>
+  {{/each}}
+</div>
+
+<div class="followers-container">
+  <h4>Followers:</h4>
+  {{#each followers}}
+  <p>{{this.following.displayName}}</p>
+  {{/each}}
+</div>
+
+<div class="buttons-container">
+  {{#if followbtn}}
+  <form action="/users/{{user._id}}/follow" method="post">
+    <button type="submit">Follow</button>
+  </form>
+  {{else}}
+  <form action="/users/{{user._id}}/unfollow" method="post">
+    <button type="submit">Unfollow</button>
+  </form>
+  {{/if}}
+</div>

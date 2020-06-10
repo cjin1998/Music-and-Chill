@@ -1,0 +1,49 @@
+<html>
+
+<head>
+	<style>
+		body {
+			margin: 0;
+			overflow: hidden;
+			display: flex;
+		}
+
+		#search {
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			padding-left: 700px;
+			top: 40%;
+		}
+
+		input {
+			font-family: 'Open Sans', sans-serif;
+			outline: none;
+			font-size: 36px;
+			width: 500px;
+			padding: 0 5px;
+			border: 5px solid #FFF;
+			border-radius: 5px;
+			box-shadow: 0 3px 5px 0;
+		}
+	</style>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+	<script>let users = JSON.parse((`{{ users }}`.split('&quot;').join(`"`))) </script>
+
+	<script src="js/frame.js"></script>
+	<script src="js/main.js"></script>
+</head>
+
+<body>
+	<div style="display: flex; flex-direction: column">
+		<div id="search" style="flex: 1; max-width: 30%; margin-left: 130px">
+			<input type="text" placeholder="Search" />
+		</div>
+		<a class="btn btn-primary" href="/logout"
+			style="margin-top: 30px; margin-left: 30px; width: 100px;flex: 1">Logout</a>
+	</div>
+</body>
+
+</html>
