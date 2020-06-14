@@ -3,60 +3,121 @@
     <h1 style="color: white; font-size: 50; padding-bottom: 50px">This is {{displayName}}'s playroom </h1>
     <div id="pianoDiv">
         <svg class="piano" id="piano" height="230" width="1000">
-            <polygon points="200,10 230,10 230,100 245,100 245,220 200,220 200,10" class="white" id="c" data-key="65" />
+            <g>
+                <polygon points="200,10 230,10 230,100 245,100 245,220 200,220 200,10" class="white" id="c"
+                    data-key="65" />
+                <text x="210" y="200" font-size="30" fill="blue">Q</text>
+            </g>
+
+            <g>
+                <polygon points="245,100 260,100 260,10 275,10 275,100 290,100 290,220 245,220 245,100" class="white"
+                    data-key="83" id="d" />
+                <text x="254" y="200" font-size="30" fill="blue">W</text>
+            </g>
+
+            <g>
+                <polygon points="305,10 335,10 335,220 290,220 290,100 305,100 305,10" class="white" data-key="68"
+                    id="e" />
+                <text x="305" y="200" font-size="30" fill="blue">E</text>
+            </g>
+            <g>
+                <polygon points="335,10 365,10 365,100 380,100 380,220 335,220 335,10" class="white" data-key="70"
+                    id="f" />
+                <text x="347" y="200" font-size="30" fill="blue">R</text>
+            </g>
+            <g>
+                <polygon points="380,100 395,100 395,10 410,10 410,100 425,100 425,220 380,220 380,100" class="white"
+                    data-key="71" id="g" />
+                <text x="392" y="200" font-size="30" fill="blue">T</text>
+            </g>
+            <g>
+                <polygon points="425,100 440,100 440,10 455,10 455,100 470,100 470,220 425,220 425,100" class="white"
+                    data-key="72" id="a" />
+                <text x="437.5" y="200" font-size="30" fill="blue">Y</text>
+            </g>
+            <g>
+                <polygon points="470,100 485,100 485,10 515,10 515,220 470,220 470,100" class="white" data-key="74"
+                    id="b" />
+                <text x="482" y="200" font-size="30" fill="blue">U</text>
+            </g>
+            <g>
+                <polygon points="515,10 545,10 545,100 560,100 560,220 515,220 515,10" class="white" data-key="82"
+                    id="hc" />
+                <text x="527" y="200" font-size="30" fill="blue">Z</text>
+            </g>
+            <g>
+                <polygon points="560,100 575,100 575,10 590,10 590,100 605,100 605,220 560,220" class="white"
+                    data-key="84" id="hd" />
+                <text x="572" y="200" font-size="30" fill="blue">X</text>
+            </g>
+            <g>
+                <polygon points="605,100 620,100 620,10 650,10 650,220 605,220 605,100" class="white" data-key="89"
+                    id="he" />
+                <text x="617" y="200" font-size="30" fill="blue">C</text>
+            </g>
+            <g>
+                <polygon points="650,10 680,10 680,100 695,100 695,220 650,220 650,10" class="white" data-key="85"
+                    id="hf" />
+                <text x="662" y="200" font-size="30" fill="blue">V</text>
+            </g>
+            <g>
+                <polygon points="695,100 710,100 710,10 725,10 725,100 740,100 740,220 695,220 695,100" class="white"
+                    data-key="73" id="hg" />
+                <text x="707.5" y="200" font-size="30" fill="blue">B</text>
+            </g>
+            <g>
+                <polygon points="740,100 755,100 755,10 770,10 770,100 785,100 785,220 740,220 740,100" class="white"
+                    data-key="79" id="ha" />
+                <text x="751.5" y="200" font-size="30" fill="blue">N</text>
+            </g>
+            <g>
+                <polygon points="785,100 800,100 800,10 830,10 830,220 785,220 785,100" class="white" data-key="80"
+                    id="hb" />
+                <text x="795" y="200" font-size="30" fill="blue">M</text>
+            </g>
 
 
-            <polygon points="245,100 260,100 260,10 275,10 275,100 290,100 290,220 245,220 245,100" class="white"
-                data-key="83" id="d" />
+            <g>
+                <polygon points="230,10 260,10 260,100 230,100 230,10" class="black" data-key="49" id="c_sharp" />
+                <text x="236" y="90" font-size="25" fill="blue">2</text>
+            </g>
 
-
-            <polygon points="305,10 335,10 335,220 290,220 290,100 305,100 305,10" class="white" data-key="68" id="e" />
-
-
-            <polygon points="335,10 365,10 365,100 380,100 380,220 335,220 335,10" class="white" data-key="70" id="f" />
-
-
-            <polygon points="380,100 395,100 395,10 410,10 410,100 425,100 425,220 380,220 380,100" class="white"
-                data-key="71" id="g" />
-
-
-            <polygon points="425,100 440,100 440,10 455,10 455,100 470,100 470,220 425,220 425,100" class="white"
-                data-key="72" id="a" />
-
-            <polygon points="470,100 485,100 485,10 515,10 515,220 470,220 470,100" class="white" data-key="74"
-                id="b" />
-
-            <polygon points="515,10 545,10 545,100 560,100 560,220 515,220 515,10" class="white" data-key="82"
-                id="hc" />
-
-            <polygon points="560,100 575,100 575,10 590,10 590,100 605,100 605,220 560,220" class="white" data-key="84"
-                id="hd" />
-
-            <polygon points="605,100 620,100 620,10 650,10 650,220 605,220 605,100" class="white" data-key="89"
-                id="he" />
-
-            <polygon points="650,10 680,10 680,100 695,100 695,220 650,220 650,10" class="white" data-key="85"
-                id="hf" />
-
-            <polygon points="695,100 710,100 710,10 725,10 725,100 740,100 740,220 695,220 695,100" class="white"
-                data-key="73" id="hg" />
-
-            <polygon points="740,100 755,100 755,10 770,10 770,100 785,100 785,220 740,220 740,100" class="white"
-                data-key="79" id="ha" />
-
-            <polygon points="785,100 800,100 800,10 830,10 830,220 785,220 785,100" class="white" data-key="80"
-                id="hb" />
-
-            <polygon points="230,10 260,10 260,100 230,100 230,10" class="black" data-key="49" id="c_sharp" />
-            <polygon points="275,10 305,10 305,100 275,100 275,10" class="black" data-key="50" id="d_sharp" />
-            <polygon points="365,10 395,10 395,100 365,100 365,10" class="black" data-key="51" id="f_sharp" />
-            <polygon points="410,10 440,10 440,100 410,100 410,10" class="black" data-key="52" id="g_sharp" />
-            <polygon points="455,10 485,10 485,100 455,100 455,10" class="black" data-key="53" id="a_sharp" />
-            <polygon points="545,10 575,10 575,100 545,100 545,10" class="black" data-key="54" id="key4" />
-            <polygon points="590,10 620,10 620,100 590,100 590,10" class="black" data-key="55" id="key4" />
-            <polygon points="680,10 710,10 710,100 680,100 680,10" class="black" data-key="56" id="key4" />
-            <polygon points="725,10 755,10 755,100 725,100 725,10" class="black" data-key="57" id="key4" />
-            <polygon points="770,10 800,10 800,100 770,100 770,10" class="black" data-key="48" id="key4" />
+            <g>
+                <polygon points="275,10 305,10 305,100 275,100 275,10" class="black" data-key="50" id="d_sharp" />
+                <text x="282" y="90" font-size="25" fill="blue">3</text>
+            </g>
+            <g>
+                <polygon points="365,10 395,10 395,100 365,100 365,10" class="black" data-key="51" id="f_sharp" />
+                <text x="372" y="90" font-size="25" fill="blue">5</text>
+            </g>
+            <g>
+                <polygon points="410,10 440,10 440,100 410,100 410,10" class="black" data-key="52" id="g_sharp" />
+                <text x="416.5" y="90" font-size="25" fill="blue">6</text>
+            </g>
+            <g>
+                <polygon points="455,10 485,10 485,100 455,100 455,10" class="black" data-key="53" id="a_sharp" />
+                <text x="461" y="90" font-size="25" fill="blue">7</text>
+            </g>
+            <g>
+                <polygon points="545,10 575,10 575,100 545,100 545,10" class="black" data-key="54" id="hc_sharp" />
+                <text x="553" y="90" font-size="25" fill="blue">S</text>
+            </g>
+            <g>
+                <polygon points="590,10 620,10 620,100 590,100 590,10" class="black" data-key="55" id="hd_sharp" />
+                <text x="595.6" y="90" font-size="25" fill="blue">D</text>
+            </g>
+            <g>
+                <polygon points="680,10 710,10 710,100 680,100 680,10" class="black" data-key="56" id="hf_sharp" />
+                <text x="685.3" y="90" font-size="25" fill="blue">G</text>
+            </g>
+            <g>
+                <polygon points="725,10 755,10 755,100 725,100 725,10" class="black" data-key="57" id="hg_sharp" />
+                <text x="730.2" y="90" font-size="25" fill="blue">H</text>
+            </g>
+            <g>
+                <polygon points="770,10 800,10 800,100 770,100 770,10" class="black" data-key="48" id="ha_sharp" />
+                <text x="782" y="90" font-size="25" fill="blue">J</text>
+            </g>
         </svg>
     </div>
 
@@ -94,6 +155,8 @@
                     break;
                 case 50: //black
                     path = "mid_c_sharp";
+                    $("#c_sharp").toggleClass("white");
+                    $("#c_sharp").toggleClass("black");
                     break;
                 case 87: //white 
                     path = "middle_d";
@@ -101,6 +164,8 @@
                     break;
                 case 51:
                     path = "mid_d_sharp";
+                    $("#d_sharp").toggleClass("white");
+                    $("#d_sharp").toggleClass("black");
                     break;
                 case 69:
                     path = "middle_e";
@@ -112,6 +177,8 @@
                     break;
                 case 53:
                     path = "mid_f_sharp";
+                    $("#f_sharp").toggleClass("white");
+                    $("#f_sharp").toggleClass("black");
                     break;
                 case 84:
                     path = "middle_g";
@@ -119,6 +186,8 @@
                     break;
                 case 54:
                     path = "mid_g_sharp";
+                    $("#g_sharp").toggleClass("white");
+                    $("#g_sharp").toggleClass("black");
                     break;
                 case 89:
                     path = "middle_a";
@@ -126,6 +195,8 @@
                     break;
                 case 55:
                     path = "mid_a_sharp";
+                    $("#a_sharp").toggleClass("white");
+                    $("#a_sharp").toggleClass("black");
                     break;
                 case 85:
                     path = "middle_b";
@@ -137,6 +208,8 @@
                     break;
                 case 83:
                     path = "high_c_sharp";
+                    $("#hc_sharp").toggleClass("white");
+                    $("#hc_sharp").toggleClass("black");
                     break;
                 case 88:
                     path = "high_d";
@@ -144,6 +217,8 @@
                     break;
                 case 68:
                     path = "high_d_sharp";
+                    $("#hd_sharp").toggleClass("white");
+                    $("#hd_sharp").toggleClass("black");
                     break;
                 case 67:
                     path = "high_e";
@@ -155,6 +230,8 @@
                     break;
                 case 71:
                     path = "high_f_sharp";
+                    $("#hf_sharp").toggleClass("white");
+                    $("#hf_sharp").toggleClass("black");
                     break;
                 case 66:
                     path = "high_g";
@@ -162,13 +239,18 @@
                     break;
                 case 72:
                     path = "high_g_sharp";
+                    $("#hg_sharp").toggleClass("white");
+                    $("#hg_sharp").toggleClass("black");
                     break;
                 case 78:
                     path = "high_a";
                     $("#ha").toggleClass("white");
+
                     break;
                 case 74:
                     path = "high_a_sharp";
+                    $("#ha_sharp").toggleClass("white");
+                    $("#ha_sharp").toggleClass("black");
                     break;
                 case 77:
                     path = "high_b";
@@ -183,10 +265,15 @@
             switch (e.keyCode) {
                 case 81: //white
                     path = "middle_c";
+
                     $("#c").toggleClass("white");
                     break;
                 case 50: //black
-                    path = "mid_c_sharp";
+                    path = "mid_c_sharp"
+                    $("#c_sharp").toggleClass("black");
+
+                    $("#c_sharp").toggleClass("white");
+
                     break;
                 case 87: //white 
                     path = "middle_d";
@@ -194,6 +281,8 @@
                     break;
                 case 51:
                     path = "mid_d_sharp";
+                    $("#d_sharp").toggleClass("white");
+                    $("#d_sharp").toggleClass("black");
                     break;
                 case 69:
                     path = "middle_e";
@@ -205,6 +294,8 @@
                     break;
                 case 53:
                     path = "mid_f_sharp";
+                    $("#f_sharp").toggleClass("white");
+                    $("#f_sharp").toggleClass("black");
                     break;
                 case 84:
                     path = "middle_g";
@@ -212,6 +303,8 @@
                     break;
                 case 54:
                     path = "mid_g_sharp";
+                    $("#g_sharp").toggleClass("white");
+                    $("#g_sharp").toggleClass("black");
                     break;
                 case 89:
                     path = "middle_a";
@@ -219,6 +312,8 @@
                     break;
                 case 55:
                     path = "mid_a_sharp";
+                    $("#a_sharp").toggleClass("white");
+                    $("#a_sharp").toggleClass("black");
                     break;
                 case 85:
                     path = "middle_b";
@@ -230,6 +325,8 @@
                     break;
                 case 83:
                     path = "high_c_sharp";
+                    $("#hc_sharp").toggleClass("white");
+                    $("#hc_sharp").toggleClass("black");
                     break;
                 case 88:
                     path = "high_d";
@@ -237,6 +334,8 @@
                     break;
                 case 68:
                     path = "high_d_sharp";
+                    $("#hd_sharp").toggleClass("white");
+                    $("#hd_sharp").toggleClass("black");
                     break;
                 case 67:
                     path = "high_e";
@@ -248,6 +347,8 @@
                     break;
                 case 71:
                     path = "high_f_sharp";
+                    $("#hf_sharp").toggleClass("white");
+                    $("#hf_sharp").toggleClass("black");
                     break;
                 case 66:
                     path = "high_g";
@@ -255,6 +356,8 @@
                     break;
                 case 72:
                     path = "high_g_sharp";
+                    $("#hg_sharp").toggleClass("white");
+                    $("#hg_sharp").toggleClass("black");
                     break;
                 case 78:
                     path = "high_a";
@@ -262,6 +365,8 @@
                     break;
                 case 74:
                     path = "high_a_sharp";
+                    $("#ha_sharp").toggleClass("white");
+                    $("#ha_sharp").toggleClass("black");
                     break;
                 case 77:
                     path = "high_b";
